@@ -1,0 +1,13 @@
+.business-unit-details-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    &__box {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

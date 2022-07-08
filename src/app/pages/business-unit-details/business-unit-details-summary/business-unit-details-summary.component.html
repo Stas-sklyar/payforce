@@ -1,0 +1,63 @@
+<div class="business-unit-details-summary">
+
+    <div class="business-unit-details-summary__box summary-box">
+        <h2 class="summary-box__title">Total Cost</h2>
+
+        <div class="summary-box__content summary-content">
+            <div class="summary-content__col">
+                <div class="summary-content__label">Actual</div>
+                <div class="summary-content__value">
+                    {{ businessUnitDetailsSummary.totalCost.actual + 'k€' }}
+                </div>
+            </div>
+
+            <div class="summary-content__col">
+                <div class="summary-content__label">AOP</div>
+                <div class="summary-content__value">
+                    {{ businessUnitDetailsSummary.totalCost.AOP + 'k€' }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="business-unit-details-summary__box summary-box">
+        <h2 class="summary-box__title">Head Count - Average on Period</h2>
+
+        <div class="summary-box__content summary-content">
+            <div class="summary-content__col">
+                <div class="summary-content__label">Actual</div>
+                <div class="summary-content__value">
+                    {{ businessUnitDetailsSummary.headCount.averageOnPeriod.actual }}
+                </div>
+            </div>
+
+            <div class="summary-content__col">
+                <div class="summary-content__label">AOP</div>
+                <div class="summary-content__value">
+                    {{ businessUnitDetailsSummary.headCount.averageOnPeriod.AOP }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="business-unit-details-summary__box summary-box">
+        <h2 class="summary-box__title">Head Count - End of Period</h2>
+
+        <div class="summary-box__content summary-content">
+            <div class="summary-content__col">
+                <div class="summary-content__label">Actual</div>
+                <div class="summary-content__value">
+                    {{ businessUnitDetailsSummary.headCount.endOfPeriod.actual }}
+                </div>
+            </div>
+
+            <div class="summary-content__col">
+                <div class="summary-content__label">AOP</div>
+                <div class="summary-content__value">
+                    {{ businessUnitDetailsSummary.headCount.endOfPeriod.AOP }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="overview-search-form">
+    <div class="overview-search-form__col">
+        <label class="overview-search-form__label">
+            <span class="main-input-label">Period</span>
+            <nz-range-picker class="overview-search-form__datepicker"></nz-range-picker>
+        </label>
+        <label class="overview-search-form__label">
+            <span class="main-input-label">Reference</span>
+            <nz-select class="overview-search-form__form-control" nzPlaceHolder="Select reference">
+                <nz-option nzValue="AOP" nzLabel="AOP"></nz-option>
+                <nz-option nzValue="value 2" nzLabel="value 2"></nz-option>
+            </nz-select>
+        </label>
+        <label class="overview-search-form__label">
+            <span class="main-input-label">Funded Heads</span>
+            <nz-select class="overview-search-form__form-control" nzPlaceHolder="Select funded heads">
+                <nz-option nzValue="Martin Robert" nzLabel="Martin Robert"></nz-option>
+                <nz-option nzValue="Philippe Dupont" nzLabel="Philippe Dupont"></nz-option>
+            </nz-select>
+        </label>
+    </div>
+
+    <div class="overview-search-form__col">
+        <div class="overview-search-form__item">
+            <input
+                placeholder='Search for a manager'
+                nz-input
+            />
+            <ng-template #suffixIcon>
+                <i nz-icon nzType="search"></i>
+            </ng-template>
+            <nz-autocomplete></nz-autocomplete>
+        </div>
+
+        <div class="overview-search-form__item">
+            <button nz-button nzType="primary">Variance Explanation</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+.business-unit-details-search-form {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    &__col {
+        display: flex;
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        margin-right: 8px;
+    }
+
+    &__form-control {
+        width: 200px;
+
+        &:first-child {
+            width: 300px !important;
+        }
+    }
+    
+    &__datepicker {
+        width: 250px;
+    }
+}

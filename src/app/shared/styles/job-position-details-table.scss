@@ -1,0 +1,26 @@
+.job-position-details-table__body.ant-table-tbody>tr>td {
+    border-bottom: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--main-dark-text);
+}
+
+.job-position-details-table__body.ant-table-tbody>tr:nth-child(even)>td {
+    background-color: var(--highlight-table-row-bg);
+}
+
+// FIX
+// .job-position-details-table__head.ant-table-thead>tr>th.ant-table-cell
+.ant-table-thead>tr>th.ant-table-cell {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    background-color: #ffffff !important;
+    color: var(--main-dark-text);
+}
+
+th.job-position-details-table__first-column-cell,
+td.job-position-details-table__first-column-cell {
+    padding-left: 25px !important;
+}

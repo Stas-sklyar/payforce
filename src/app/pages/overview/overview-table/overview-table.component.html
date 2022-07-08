@@ -1,0 +1,75 @@
+<div class="overview-table">
+    <h2 class="overview-table__title main-table-title">All Business Units</h2>
+
+    <nz-table 
+        class="overview-table__table main-table" 
+        #filterTable
+        [nzData]="businessUnits" 
+        nzTableLayout="fixed" 
+        [nzShowPagination]="false"
+    >
+        <thead class="main-table__head">
+            <tr>
+                <th 
+                    *ngFor="let tableColumn of listOfTableColumns; let i = index"
+                    [nzAlign]="i < 2 ? 'left' : 'center'"
+                    [(nzSortOrder)]="tableColumn.sortOrder"
+                    [nzSortFn]="tableColumn.sortFn"
+                    [nzFilters]="tableColumn.listOfFilter"
+                    [nzFilterFn]="tableColumn.filterFn"
+                    [nzShowFilter]="i < 2 ? true : false"
+                 >
+                    {{ tableColumn.name }}
+                </th>
+            </tr>
+        </thead>
+        <tbody class="main-table__body">
+            <tr 
+                *ngFor="let data of filterTable.data; index as i"
+                [class]="i === selectedIndexOfRow
+                    ? 'overview-table__row overview-table__row--active'
+                    : 'overview-table__row'" 
+                (mouseenter)="openActionsMenu(i)" 
+                (mouseleave)="hideActionsMenu()"
+            >
+
+                <td>{{ data.bu_name }}</td>
+                <td>{{ data.director_name }}</td>
+                <td nzAlign="center">{{ data.actual_cost | pasteCurrencySymbolAndSpaces }}</td>
+                <td nzAlign="center">{{ data.AOP_cost | pasteCurrencySymbolAndSpaces }} </td>
+                <td nzAlign="center"
+                    [class]="data.cost_variance > 0 ? 'main-table__td--table-value-gt-0' : 'main-table__td--table-value-lt-0'"
+                >
+                    {{  data.cost_variance > 0 ? '+ ' + data.cost_variance : '- ' + (data.cost_variance * -1) }} %
+                </td>
+                <td nzAlign="center">{{ data.actual_HC }}</td>
+                <td nzAlign="center">{{ data.AOP_HC }}</td>
+                <td nzAlign="center"
+                    [class]="data.HC_variance > 0 ? 'main-table__td--table-value-gt-0' : 'main-table__td--table-value-lt-0'"
+                >
+                    {{ data.HC_variance > 0 ? '+ ' + data.HC_variance : '- ' + (data.HC_variance * -1) }}
+                </td>
+
+                <td nzAlign="center">
+                    <span class="actions-menu">
+                        <a [routerLink]="['financial-healthcheck', data.id]">
+                            <i nz-icon nzType="eye" nzTheme="outline"></i>
+                        </a>
+                    </span>
+                </td>
+                
+            </tr>
+        </tbody>
+    </nz-table>
+
+    <div class="overview-table__pagination">
+        <nz-pagination 
+            [nzPageIndex]="1" 
+            [nzTotal]="3" 
+            nzShowSizeChanger 
+            [nzPageSize]="10"
+        >
+        </nz-pagination>
+    </div>
+
+</div>

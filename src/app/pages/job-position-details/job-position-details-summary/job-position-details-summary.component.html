@@ -1,0 +1,35 @@
+<div class="summary">
+    <div class="summary__box">
+        <div class="summary__subtitle">Current Attribution</div>
+        <div class="summary__title">{{ summaryData.current_attribution }}</div>
+    </div>
+    
+    <div class="summary__box">
+        <div class="summary__subtitle">Contract</div>
+        <div class="summary__title summary-title">
+            <span>{{ summaryData.contract.type }}</span>
+            <span class="summary-title__horizontal-line"></span>
+            <span class="summary-title__number-of-hours">{{ summaryData.contract.hours }}h</span>
+        </div>
+    </div>
+
+    <div class="summary__box">
+        <div class="summary__subtitle">Remaining Paid Vacations</div>
+        <div class="summary__title">{{ summaryData.remaining_paid_vacations }} days</div>
+    </div>
+
+    <div class="summary__box">
+        <div class="summary__subtitle">Manager</div>
+        <div class="summary__title">{{ summaryData.manager }}</div>
+    </div>
+
+    <div class="summary__box">
+        <div class="summary__subtitle">Department</div>
+        <div class="summary__title">{{ summaryData.department }}</div>
+    </div>
+
+    <div class="summary__box">
+        <div class="summary__subtitle">Funded</div>
+        <div class="summary__title">{{ summaryData.funded }}</div>
+    </div>
+</div>

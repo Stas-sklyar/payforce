@@ -1,0 +1,69 @@
+<div class="job-position-table">
+    <h2 class="job-position-table__title main-table-title">Job Position Details</h2>
+
+    <nz-table 
+        class="job-position-table__table main-table" 
+        #filterTable
+        [nzData]="jobPositionDetailsTableData" 
+        [nzScroll]="{ x: '1700px' }"
+        [nzShowPagination]="false"
+    >
+        <thead class="main-table__head">
+            <tr>
+                <th 
+                    *ngFor="let tableColumn of listOfTableColumns; let i = index"
+                    [nzAlign]="i < 1 ? 'left' : 'center'"
+                    [(nzSortOrder)]="tableColumn.sortOrder"
+                    [nzSortFn]="tableColumn.sortFn"
+                    [nzFilters]="tableColumn.listOfFilter"
+                    [nzFilterFn]="tableColumn.filterFn"
+                    [nzShowFilter]="i === 8 ? true : false"
+                 >
+                    {{ tableColumn.name }}
+                </th>
+            </tr>
+        </thead>
+        <tbody class="main-table__body">
+            <tr *ngFor="let data of filterTable.data">
+                <td nzAlign="left">{{ data.month }}</td>
+                <td nzAlign="center">{{ data.gross_salary | pasteCurrencySymbolAndSpaces }}</td>
+                <td nzAlign="center">{{ data.actual_cost | pasteCurrencySymbolAndSpaces }}</td>
+                <td nzAlign="center">{{ data.AOP_cost | pasteCurrencySymbolAndSpaces }}</td>
+                <td nzAlign="center"
+                    [class]="data.cost_variance && data.cost_variance > 0 ? 'main-table__td--table-value-gt-0' : 'main-table__td--table-value-lt-0'"
+                >
+                    {{ data.cost_variance 
+                        ? data.cost_variance > 0 
+                            ? '+ ' + (data.cost_variance | pasteCurrencySymbolAndSpaces) 
+                            : '- ' + ((data.cost_variance * -1) | pasteCurrencySymbolAndSpaces)
+                        : "" 
+                    }}
+                </td>
+                <td nzAlign="center">{{ data.actual_HC }}</td>
+                <td nzAlign="center">{{ data.AOP_HC }}</td>
+                <td nzAlign="center"
+                [class]="data.HC_variance && data.HC_variance > 0 ? 'main-table__td--table-value-gt-0' : 'main-table__td--table-value-lt-0'"
+                >
+                    {{ data.HC_variance 
+                        ? data.HC_variance > 0 
+                            ? '+ ' + (data.HC_variance | pasteCurrencySymbolAndSpaces) 
+                            : '- ' + ((data.HC_variance * -1) | pasteCurrencySymbolAndSpaces)
+                        : "" 
+                    }}
+                </td>
+                <td nzAlign="center">{{ data.current_attribution }}</td>
+            </tr>
+        </tbody>
+    </nz-table>
+
+    <div class="job-position-table__pagination">
+        <nz-pagination 
+            [nzPageIndex]="1" 
+            [nzTotal]="3" 
+            nzShowSizeChanger 
+            [nzPageSize]="5"
+        >
+        </nz-pagination>
+    </div>
+
+</div>
