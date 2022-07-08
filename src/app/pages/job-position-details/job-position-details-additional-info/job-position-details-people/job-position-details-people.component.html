@@ -1,3 +1,31 @@
 <div class="people">
     <h2 class="people__title main-table-title">People who held this position</h2>
+
+    <nz-table 
+        class="job-position-details-table" 
+        [nzData]="peopleTableData"
+        [nzShowPagination]="false"
+    >
+        <thead class="job-position-details-table__head">
+            <tr>
+                <th 
+                    *ngFor="let tableColumnName of peopleTableColumnsNames; let i = index"
+                    [class]="i === 0 ? 'job-position-details-table__first-column-cell' : ''"
+                    [nzAlign]="i < 1 ? 'left' : 'center'"
+                >
+                    {{ tableColumnName }}
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="job-position-details-table__body">
+            <tr *ngFor="let data of peopleTableData">
+                <td class="job-position-details-table__first-column-cell" nzAlign="left">
+                    {{ data.arrival_date }}
+                </td>
+                <td nzAlign="center"> {{ data.leaving_date }} </td>
+                <td nzAlign="center"> {{ data.people }} </td>
+            </tr>
+        </tbody>
+    </nz-table>
 </div>

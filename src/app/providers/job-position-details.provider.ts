@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IAbsencesTableItem } from '../pages/job-position-details/job-position-details-additional-info/job-position-details-absences/job-position-details-absences.component';
 import { IAdventagesTableItem } from '../pages/job-position-details/job-position-details-additional-info/job-position-details-advantages/job-position-details-advantages.component';
+import { IPeopleTableItem } from '../pages/job-position-details/job-position-details-additional-info/job-position-details-people/job-position-details-people.component';
 import { ISummaryOfJobPositionDetails } from '../pages/job-position-details/job-position-details-summary/job-position-details-summary.component';
 import { IJobPositionDetailsTableItem } from '../pages/job-position-details/job-position-details-table/job-position-details-table.component';
 
@@ -32,6 +33,7 @@ export class JobPositionDetailsProvider {
     jobPositionDetailsTableData: IJobPositionDetailsTableItem[] = [];
     absencesTableData: IAbsencesTableItem[] = [];
     advantagesTableData: IAdventagesTableItem[] = [];
+    peopleTableData: IPeopleTableItem[] = [];
 
     constructor() {
     }
@@ -212,8 +214,45 @@ export class JobPositionDetailsProvider {
         })
     }
 
-    getPeopleTableData(): any {
+    getPeopleTableData(): Promise<IPeopleTableItem[]> {
+        return new Promise(resolve => {
 
+            // API request 1
+            // this.vacanciesService.getVacancies()
+            //   .subscribe((response: ISomeModelFromAPIForTable[]) => {
+
+            //     // API request 2
+            //     this.vacanciesService.getVacancies()
+            //       .subscribe((response: ISomeModelFromAPIForTable[]) => {
+
+            //         // calculations...
+
+            //       });
+
+            //   });
+
+
+            // transformation
+            this.peopleTableData = [
+                {
+                    arrival_date: "20/06/2019",
+                    leaving_date: "03/02/2022",
+                    people: "Catherine Brigitte"
+                },
+                {
+                    arrival_date: "16/04/2018",
+                    leaving_date: "13/03/2022",
+                    people: "Lilian Tavernier"
+                },
+                {
+                    arrival_date: "03/09/2016",
+                    leaving_date: "02/04/2028",
+                    people: "Ivan Ternaux"
+                }
+            ]
+
+            resolve(this.peopleTableData);
+        })
     }
 
 }

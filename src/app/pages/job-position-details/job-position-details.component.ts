@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: 'app-job-position-details',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobPositionDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly headerService: HeaderService
+  ) { }
 
   ngOnInit(): void {
+    this.headerService.setCurrentTitle("Shift Manager");
   }
 
 }

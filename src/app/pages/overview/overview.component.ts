@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EChartsOption } from 'echarts';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: 'app-overview',
@@ -7,10 +7,14 @@ import { EChartsOption } from 'echarts';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
-  
-  constructor() { }
+
+  constructor(
+    private readonly headerService: HeaderService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.headerService.setCurrentTitle("Overview");
   }
 
 }
