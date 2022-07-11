@@ -5,7 +5,7 @@ import { IOverviewTableItem } from '../../overview/overview-table/overview-table
 
 export interface ITableItemForJobPosition {
   status: string;
-  id_job: number;
+  id_job: string;
   job_position: string;
   people?: string;
   GCL: number;
@@ -138,6 +138,9 @@ export class BusinessUnitDetailsTableComponent implements OnInit {
 
   selectedIndexOfRow: number = -1;
 
+  modalForMergeIsVisible: boolean = false;
+  jobPositionIdForMerge: string = ""
+
   constructor(
     private businessUnitDetailsProvider: BusinessUnitDetailsProvider
   ) { }
@@ -158,6 +161,15 @@ export class BusinessUnitDetailsTableComponent implements OnInit {
 
   hideActionsMenu(): void {
     this.selectedIndexOfRow = -1;
+  }
+
+  showModalForMerge(jobPositionId: string): void {
+    this.modalForMergeIsVisible = true;
+    this.jobPositionIdForMerge = jobPositionId;
+  }
+
+  closeModalForMerge(): void {
+    this.modalForMergeIsVisible = false;
   }
 
 }

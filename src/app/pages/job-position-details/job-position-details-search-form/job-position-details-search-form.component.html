@@ -14,7 +14,27 @@
     </div>
     
     <div class="search-form__col">
-        <button class="search-form__btn" nz-button nzType="primary">Merge to AOP Position</button>
-        <button class="search-form__btn" nz-button nzType="primary">Explain Variance</button>
+        <button 
+            class="search-form__btn" 
+            nz-button 
+            nzType="primary"
+            (click)="showModalForMerge()"
+        >
+            Merge to AOP Position
+        </button>
+
+        <button 
+            class="search-form__btn" 
+            nz-button 
+            nzType="primary"
+        >
+            Explain Variance
+        </button>
     </div>
 </div>
+
+<app-modal-for-merge 
+    [isVisible]="modalForMergeIsVisible"
+    [idOfCurrentMergingPosition]="jobPositionIdForMerge"
+    (modalForMergeWasClosed)="closeModalForMerge()"
+></app-modal-for-merge>

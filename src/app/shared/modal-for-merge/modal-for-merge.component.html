@@ -1,0 +1,39 @@
+<nz-modal
+    class="modal-for-merge" 
+    [(nzVisible)]="isVisible"
+    (nzOnCancel)="handleCancel()" 
+    (nzOnOk)="mergeJobPosition()"
+    nzCloseIcon="close-circle"
+    [nzWidth]="425"
+>
+    <div class="main-modal-window-title" *nzModalTitle>
+        Merge a Job Position
+    </div>
+    
+    <ng-container *nzModalContent>
+        <p>
+            Select an ID Job Position to merge to 
+            <a [routerLink]="'/job-position-details/' + idOfCurrentMergingPosition" class="modal-for-merge__current-merging-position">
+                8-Application Engineer
+            </a>.
+        </p>
+
+        <label class="modal-for-merge__label">
+            <span class="main-input-label">ID Job Position</span>
+            <nz-select class="modal-for-merge__form-control" nzPlaceHolder="Select an ID job position">
+                <nz-option 
+                    *ngFor="let jobPosition of jobPositionsList;" 
+                    [nzValue]="jobPosition.id" 
+                    [nzLabel]="jobPosition.label"
+                >
+                </nz-option>
+            </nz-select>
+        </label>
+    </ng-container>
+
+    <div *nzModalFooter>
+        <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+        <button nz-button nzType="primary" (click)="mergeJobPosition()">Merge</button>
+    </div>
+
+</nz-modal>

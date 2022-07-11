@@ -1,3 +1,7 @@
+@import "./app/shared/styles/job-position-details-table";
+@import "./app/shared/styles/main-table";
+@import "./app/shared/styles/summary-cards";
+@import "./app/shared/styles/modal-window";
 
 :root {
     --site-bg: #F2F6F9;
@@ -47,6 +51,6 @@ input:placeholder-shown {
     font-style: italic;
 }
 
-@import "./app/shared/styles/job-position-details-table";
-@import "./app/shared/styles/main-table";
-@import "./app/shared/styles/summary-cards";
+.ant-message-notice {
+    text-align: right;
+}

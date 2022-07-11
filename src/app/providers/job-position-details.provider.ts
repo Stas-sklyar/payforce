@@ -5,18 +5,6 @@ import { IPeopleTableItem } from '../pages/job-position-details/job-position-det
 import { ISummaryOfJobPositionDetails } from '../pages/job-position-details/job-position-details-summary/job-position-details-summary.component';
 import { IJobPositionDetailsTableItem } from '../pages/job-position-details/job-position-details-table/job-position-details-table.component';
 
-export interface ISomeModelFromAPIForSummary {
-    current_attribution: string;
-    contract: {
-        type: string;
-        hours: number;
-    };
-    remaining_paid_vacations: number;
-    manager: string;
-    department: string;
-    funded: string;
-}
-
 @Injectable()
 export class JobPositionDetailsProvider {
     summaryOfJobPositionDetails: ISummaryOfJobPositionDetails = {

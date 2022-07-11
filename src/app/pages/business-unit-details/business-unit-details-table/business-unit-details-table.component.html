@@ -64,7 +64,13 @@
                         <a [routerLink]="['job-position-details/', data.id_job]">
                             <i nz-icon nzType="eye" nzTheme="outline"></i>
                         </a>
-                        <i nz-icon nzType="block" nzTheme="outline"></i>
+                        <i 
+                            nz-icon 
+                            nzType="block" 
+                            nzTheme="outline" 
+                            (click)="showModalForMerge(data.id_job)"
+                        >
+                        </i>
                     </span>
                 </td>
             </tr>
@@ -82,3 +88,9 @@
     </div>
 
 </div>
+
+<app-modal-for-merge 
+    [isVisible]="modalForMergeIsVisible"
+    [idOfCurrentMergingPosition]="jobPositionIdForMerge"
+    (modalForMergeWasClosed)="closeModalForMerge()"
+></app-modal-for-merge>

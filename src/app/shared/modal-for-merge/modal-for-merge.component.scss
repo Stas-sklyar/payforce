@@ -1,0 +1,12 @@
+.modal-for-merge {
+
+    &__current-merging-position {
+        color: var(--light-blue);
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+}

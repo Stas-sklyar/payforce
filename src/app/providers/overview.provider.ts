@@ -2,37 +2,6 @@ import { Injectable } from '@angular/core';
 import { IOverviewSummary } from '../pages/overview/overview-summary/overview-summary.component';
 import { IOverviewTableItem } from '../pages/overview/overview-table/overview-table.component';
 
-export interface ISomeModelFromAPIForSummary {
-  headCount: {
-    averageOnPeriod: {
-      actual: number;
-      AOP: number;
-    },
-
-    endofPeriod: {
-      actual: number;
-      AOP: number;
-    }
-  },
-
-  totalCost: {
-    actual: number;
-    AOP: number;
-  }
-}
-
-export interface ISomeModelFromAPIForTable {
-  id: number;
-  bu_name: string;
-  director_name: string;
-  actual_cost: number;
-  AOP_cost: number;
-  cost_variance: number;
-  actual_HC: number;
-  AOP_HC: number;
-  HC_variance: number;
-}
-
 @Injectable()
 export class OverviewProvider {
   overviewSummary: IOverviewSummary;

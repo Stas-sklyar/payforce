@@ -2,25 +2,6 @@ import { Injectable } from '@angular/core';
 import { ISummaryOfBusinessUnitDetails } from '../pages/business-unit-details/business-unit-details-summary/business-unit-details-summary.component';
 import { ITableItemForJobPosition } from '../pages/business-unit-details/business-unit-details-table/business-unit-details-table.component';
 
-export interface ISomeModelFromAPIForSummary {
-    totalCost: {
-        actual: number;
-        AOP: number;
-    },
-
-    headCount: {
-        averageOnPeriod: {
-            actual: number;
-            AOP: number;
-        },
-
-        endOfPeriod: {
-            actual: number;
-            AOP: number;
-        }
-    }
-}
-
 @Injectable()
 export class BusinessUnitDetailsProvider {
     summaryOfBusinessUnitDetails: ISummaryOfBusinessUnitDetails;
@@ -53,11 +34,11 @@ export class BusinessUnitDetailsProvider {
 
             // API request 1
             // this.vacanciesService.getVacancies()
-            //   .subscribe((response: ISomeModelFromAPIForSummary[]) => {
+            //   .subscribe((response: ISomeModelFromAPI[]) => {
 
             //     // API request 2
             //     this.vacanciesService.getVacancies()
-            //       .subscribe((response: ISomeModelFromAPIForSummary[]) => {
+            //       .subscribe((response: ISomeModelFromAPI[]) => {
 
             //         // calculations...
 
@@ -114,7 +95,7 @@ export class BusinessUnitDetailsProvider {
             this.jobPositions = [
                 {
                     status: "Standard",
-                    id_job: 1,
+                    id_job: "1",
                     job_position: "Shift Manager",
                     people: "Marina Fox",
                     GCL: 4,
@@ -129,7 +110,7 @@ export class BusinessUnitDetailsProvider {
                 },
                 {
                     status: "Standard",
-                    id_job: 2,
+                    id_job: "2",
                     job_position: "Marketing Executive",
                     people: "Robert Dax",
                     GCL: 3,
@@ -144,7 +125,7 @@ export class BusinessUnitDetailsProvider {
                 },
                 {
                     status: "Standard",
-                    id_job: 3,
+                    id_job: "3",
                     job_position: "Marketing Executive",
                     GCL: 6,
                     contrat: "CDI",

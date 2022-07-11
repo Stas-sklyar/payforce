@@ -19,6 +19,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 import { CommonModule } from '@angular/common';
 
@@ -51,6 +53,7 @@ import { JobPositionDetailsAdditionalInfoComponent } from './pages/job-position-
 import { JobPositionDetailsAbsencesComponent } from './pages/job-position-details/job-position-details-additional-info/job-position-details-absences/job-position-details-absences.component';
 import { JobPositionDetailsAdvantagesComponent } from './pages/job-position-details/job-position-details-additional-info/job-position-details-advantages/job-position-details-advantages.component';
 import { JobPositionDetailsPeopleComponent } from './pages/job-position-details/job-position-details-additional-info/job-position-details-people/job-position-details-people.component';
+import { ModalForMergeComponent } from './shared/modal-for-merge/modal-for-merge.component';
 
 registerLocaleData(en);
 
@@ -84,7 +87,8 @@ registerLocaleData(en);
     JobPositionDetailsAdditionalInfoComponent,
     JobPositionDetailsAbsencesComponent,
     JobPositionDetailsAdvantagesComponent,
-    JobPositionDetailsPeopleComponent
+    JobPositionDetailsPeopleComponent,
+    ModalForMergeComponent
   ],
   imports: [
     BrowserModule,
@@ -102,7 +106,9 @@ registerLocaleData(en);
     NzIconModule,
     NzTableModule,
     NzPaginationModule,
-    NgxEchartsModule
+    NgxEchartsModule,
+    NzModalModule,
+    NzMessageModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
