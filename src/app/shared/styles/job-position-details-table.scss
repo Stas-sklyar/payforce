@@ -10,9 +10,7 @@
     background-color: var(--highlight-table-row-bg);
 }
 
-// FIX
-// .job-position-details-table__head.ant-table-thead>tr>th.ant-table-cell
-.ant-table-thead>tr>th.ant-table-cell {
+.job-position-details-table thead>tr>th.ant-table-cell {
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
